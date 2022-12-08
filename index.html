@@ -5,7 +5,7 @@
   <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="https://unpkg.com/vue@3.2.31"></script>
   <title>Component</title>
   <style>
       * {
@@ -58,64 +58,29 @@
 </head>
 <body>
 <div id="app">
-  <app-header></app-header>
-  <app-nav></app-nav>
-  <app-view></app-view>
+  <article class="book">
+    <div class="book_subtitle">제목</div>
+    <div class="book__title">HTML 강좌</div>
+  </article>
+  <BookComponent></BookComponent>
 </div>
+<script type="module" src="./src/main.js"></script>
 <script>
-    const App = {
-        template: `
-                  <app-header></app-header>
-                  <app-nav></app-nav>
-                  <app-view></app-view>
-                  `
-    }
-    const AppHeader = {
-        template: `
-                 <header>
-                   <h1>header</h1>
-                 </header>
-                 `
-    }
-    const AppNav = {
-        template: `
-                   <nav>
-                    <h2>nav</h2>
-                    <ul>
-                      <li><a href="#">메뉴1</a></li>
-                      <li><a href="#">메뉴2</a></li>
-                      <li><a href="#">메뉴3</a></li>
-                      <li><a href="#">메뉴4</a></li>
-                    </ul>
-                   </nav>
-                   `
-    }
-    const AppView = {
-        template: `
-                  <main>
-                    <section>
-                      <book-component></book-component>
-                      <book-component></book-component>
-                      <book-component></book-component>
-                      <book-component></book-component>
-                      <book-component></book-component>
-                    </section>
-                  </main>
-                  `
-    }
-    const BookComponent = {
-        template: `<article class="book">
-                    <div class="book_subtitle">제목</div>
-                    <div class="book__title">HTML 강좌</div>
-                  </article>
-                  `
-    }
-    const app = Vue.createApp(App);
-    app.component("BookComponent", BookComponent);
-    app.component("AppHeader", AppHeader);
-    app.component("AppNav", AppNav);
-    app.component("AppView", AppView);
-    app.mount("#app");
+  const BookComponent = {
+    template: `
+              <article class="book">
+                <div class="book_subtitle">제목</div>
+                <div class="book__title">HTML 강좌</div>
+              </article>
+              `
+  }
+  const app = Vue.createApp({});
+  app.component('BookComponent',BookComponent)
+  app.mount('#app')
 </script>
 </body>
 </html>
+<script>export default {
+  components: {}
+}
+</script>
