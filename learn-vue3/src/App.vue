@@ -1,28 +1,25 @@
 <template>
   <div>
-    <button @click="increment">click : {{ state.count }}</button>
+    <p>{{ message }}</p>
+    <button @click="addMessage">add click </button>
   </div>
 </template>
 
 <script>
-import {reactive} from "vue";
+import { ref } from "vue";
 
 export default {
   setup() {
-    const state = reactive({
-      count: 0,
-    });
-    const increment = () => {
-      state.count++
+    let message = ref('Hello Vue')
+    const addMessage = () => {
+      message.value = message.value + '!';
     }
     return {
-      state,
-      increment
-    }
-  }
-}
+      message,
+      addMessage
+    };
+  },
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
