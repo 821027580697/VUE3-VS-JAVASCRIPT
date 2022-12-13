@@ -1,25 +1,17 @@
 <template>
   <div>
-    <p>{{ message }}</p>
-    <button @click="addMessage">add click </button>
+
   </div>
 </template>
 
 <script>
-import { ref } from "vue";
-
 export default {
   setup() {
-    let message = ref('Hello Vue')
-    const addMessage = () => {
-      message.value = message.value + '!';
-    }
-    return {
-      message,
-      addMessage
-    };
-  },
-};
+
+  }
+}
 </script>
 
-<style scoped></style>
+<style scoped>
+
+</style>
